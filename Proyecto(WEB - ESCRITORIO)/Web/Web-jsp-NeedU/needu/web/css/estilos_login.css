@@ -1,0 +1,105 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative; /* Añade posición relativa para establecer el contexto de apilamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Cambia el fondo a transparente o semi-transparente */
+    height: 100vh;
+    padding: 20px;
+    z-index: 1; /* Asegúrate de que el contenedor esté sobre el video */
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para poder ver el video */
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    z-index: 2; /* Asegúrate de que la caja esté sobre el contenedor */
+    animation: fadeIn 1s ease;
+}
+
+.left img {
+    display: block;
+    width: 320px;
+    height: auto;
+}
+
+.right {
+    flex-grow: 1;
+    max-width: 400px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    animation: fadeIn 1s ease;
+    
+}
+
+
+        /* Animaciones */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+input[type=submit] {
+    background-color: #7eb1bb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    max-width: 250px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+
+#videoBackground {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Asegúrate de que el video se quede detrás de todo */
+}

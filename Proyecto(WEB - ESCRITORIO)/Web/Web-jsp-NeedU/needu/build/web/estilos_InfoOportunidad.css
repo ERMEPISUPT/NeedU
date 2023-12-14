@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f3ee;
+}
+
+#navbar {
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px; /* Aumentamos el margen en la parte superior e inferior */
+    padding-left: 92px; /* Aumentamos el margen a la izquierda */
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.links {
+    display: flex;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.menu-options {
+    display: none; /* Oculta las opciones del menú inicialmente */
+    width: 79%; /* Ajusta el ancho según tus necesidades */
+    height: 281px; /* Ajusta la altura según tus necesidades */
+    padding: 0;
+    position: absolute;
+    left: 93px; /* Ajusta la posición hacia la derecha */
+    background: white; /* Fondo blanco en toda el área del menú emergente */
+    transform: translateY(-110%); /* Empieza oculto arriba */
+    transition: transform 0.5s ease-in-out; /* Agrega la transición para transformar la propiedad */
+    z-index: 0; /* Ajusta el z-index del menú para que esté por debajo del encabezado */
+}
+
+.menu-options.active {
+    transform: translateY(0); /* Muestra el menú bajando desde arriba */
+    border-top: 3px solid #2ea3f2;
+    background: white; /* Fondo blanco en estado activo */
+}
+
+.menu-options::before {
+    content: "";
+    position: absolute;
+    top: -3px; /* Ajusta esta posición para que el pseudo-elemento esté arriba del menú */
+    width: 100%;
+    height: 3px; /* Grosor del border-top */
+    background-color: #2ea3f2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* El pseudo-elemento inicialmente está oculto */
+}
+
+.menu-options.active::before {
+    opacity: 1; /* Muestra el pseudo-elemento cuando el menú está activo */
+}
+
+.menu-options ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.menu-options li {
+    text-align: -webkit-match-parent;
+}
+
+.menu-options li a {
+    border-bottom: 2px solid rgba(0, 0, 0, .03);
+    display: block;
+}
+
+.menu-options a {
+    color: #666;
+    padding: 20px 75px; /* Reduce el espacio en la izquierda y derecha del texto */
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    background-color: white;
+    font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+    font-weight: bold;
+}
+
+.menu-options a:hover {
+}
+
+
+
+/*RESOLUCIONES*/
+@media screen and (max-width: 1000px) {
+    .menu-icon {
+        display: block; /* Mostrar el icono de menú */
+    }
+
+    .links {
+        display: none; /* Ocultar los enlaces */
+    }
+
+    .menu-options {
+        display: block; /* Mostrar las opciones del menú */
+    }
+
+    .menu-icon:hover + .menu-options {
+        display: block; /* Muestra las opciones al pasar el cursor sobre el icono de menú */
+    }
+
+    .seccion {
+        padding-left: 7%;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .menu-icon {
+        display: none; /* Ocultar el icono de menú */
+    }
+
+    .links {
+        display: flex; /* Mostrar los enlaces del navbar */
+    }
+
+    .links a {
+        font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+        color: #666;
+        text-decoration: none;
+        margin-right: 50px;
+        font-weight: bold;
+    }
+
+    .seccion {
+        padding-left: 20%;
+    }
+    
+    .texto-interior h1 {
+    margin-right: 60%;
+    }
+    .texto-interior p {
+    margin-right: 65%;
+    }
+}
+
+.imagen-oportunidad img {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Estilos para la información de la oportunidad */
+.info-oportunidad {
+    padding: 20px;
+    /* Otros estilos que necesites */
+}
+
+/* Estilos para los botones de compartir */
+.fb-share-button, .twitter-share-button {
+    margin-top: 10px;
+    background-color: #1877f2; /* Facebook */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.twitter-share-button {
+    background-color: #1da1f2; /* Twitter */
+    /* Otros estilos que necesites */
+}
+
+/* Estilos para el botón de ser voluntario */
+.btn-oportunidad {
+    background: #ff6600;
+    color: white;
+    border: 2px solid #ff6600;
+    padding: 12px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    transition: all 0.3s ease;
+}
+
+.btn-oportunidad:hover {
+    background: white;
+    color: #ff6600;
+    border-color: #ff6600;
+}

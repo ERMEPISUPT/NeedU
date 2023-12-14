@@ -1,0 +1,542 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f3ee;
+}
+
+#navbar {
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px;
+    padding-left: 92px;
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+.boton-chat {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #008577; /* Color de fondo del botón (puedes cambiarlo) */
+            color: #fff; /* Color del texto del botón */
+            border-radius: 5px; /* Bordes redondeados */
+            border: 1px solid #007bff; /* Borde del botón */
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-chat:hover {
+            background-color: #28a745; /* Color de fondo al pasar el mouse por encima */
+        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.fila {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.menu-options {
+    display: none;
+    width: 79%;
+    height: 281px;
+    padding: 0;
+    position: absolute;
+    left: 93px;
+    background: white;
+    transform: translateY(-135%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 0;
+}
+
+.menu-options.active {
+    transform: translateY(0);
+    border-top: 3px solid #2ea3f2;
+    background: white;
+}
+
+.menu-options::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 100%;
+    height: 3px;
+    background-color: #2ea3f2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.menu-options.active::before {
+    opacity: 1;
+}
+
+.menu-options ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.menu-options li {
+    text-align: -webkit-match-parent;
+}
+
+.menu-options li a {
+    border-bottom: 2px solid rgba(0, 0, 0, .03);
+    display: block;
+}
+
+.menu-options a {
+    color: #666;
+    padding: 20px 75px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    background-color: white;
+    font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+    font-weight: bold;
+}
+
+.columna-mitad, .columna-mitad.ultimo {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .menu-options {
+        display: block;
+    }
+
+    .menu-icon:hover + .menu-options {
+        display: block;
+    }
+
+    .seccion {
+        padding-left: 7%;
+    }
+
+    .fila {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .columna-mitad {
+        flex: 1;
+        max-width: 45%; /* Espacio reducido para el texto */
+    }
+
+    .columna-mitad.ultimo {
+        flex: 1;
+        max-width: 55%; /* Más espacio para la imagen */
+    }
+
+    .modulo.imagen img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        min-width: 200px; /* Ancho mínimo más grande para la imagen */
+    }
+
+    /* Ajustando los tamaños de fuente para el texto interior */
+    .texto-interior h1 {
+        font-size: 20px;
+    }
+
+    .texto-interior h4 {
+        font-size: 8px;
+    }
+
+    .texto-interior p {
+        font-size: 11px;
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 1001px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .links {
+        display: flex;
+    }
+
+    .links a {
+        font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+        color: #666;
+        text-decoration: none;
+        margin-right: 50px;
+        font-weight: bold;
+    }
+
+    .seccion {
+        padding-left: 20%;
+    }
+    
+    .texto-interior h1 {
+        margin-right: 60%;
+    }
+    
+    .modulo.imagen img {
+        width: 100%;
+        height: auto;
+        max-width: 93%;
+    }
+
+    /* Mantener tamaños de texto más grandes para pantallas más anchas */
+    .columna-mitad h1 {
+        font-size: 64px;
+    }
+
+    .columna-mitad h4 {
+        font-size: 14px;
+    }
+
+    .columna-mitad p {
+        font-size: 18px;
+    }
+}
+
+
+.columna-mitad {
+    flex-basis: 45%; /* Reduciendo el ancho de la columna */
+    max-width: 45%; /* Asegurándonos de que el máximo no sea más del 45% */
+    margin-right: 5%; /* Agregando margen a la derecha */
+    box-sizing: border-box;
+}
+
+.columna-mitad.ultimo {
+    flex-basis: 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+.columna-mitad h1 {
+    font-size: 64px;
+}
+
+.columna-mitad h4 {
+    font-size: 14px;
+}
+
+.columna-mitad p {
+    font-size: 18px;
+}
+
+
+
+
+
+
+.seccion {
+    font-family: "Open Sans, Arial, sans-serif";
+    font-size: 14px;
+    line-height: 23.8px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #666666;
+    background: #0f393b;
+    box-shadow: none;
+    border-radius: 0px 0px 20px 20px;
+    padding-top: 5%;
+    padding-bottom: 6%;
+}
+
+.texto-interior h4 {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+    letter-spacing: 1px;
+    color: #ef8451;
+    background: #0f393b;
+}
+
+.texto-interior h1 {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 64px;
+    line-height: 73.6px;
+    text-align: left;
+    letter-spacing: -1.28px;
+    color: #ffffff;
+    background: #0f393b;
+    margin-right: 10%
+}
+
+.texto-interior p {
+    font-family: "Nanum Myeongjo, Georgia, Times New Roman, serif";
+    font-size: 18px;
+    line-height: 32.4px;
+    text-align: left;
+    letter-spacing: normal;
+    color: #f2ebe4;
+    background: #0f393b;
+}
+
+/* Media query para pantallas de hasta 1000px de ancho */
+@media screen and (max-width: 1000px) {
+    /* Aumentar la especificidad si es necesario */
+    .seccion .fila .columna-mitad .texto-interior h1 {
+        font-size: 45px; /* Tamaño más pequeño para h1 */
+    }
+
+    .seccion .fila .columna-mitad .texto-interior h4 {
+        font-size: 18px; /* Tamaño más pequeño para h4 */
+    }
+
+    .seccion .fila .columna-mitad .texto-interior p {
+        font-size: 15px; /* Tamaño más pequeño para p */
+    }
+
+}
+
+
+.boton {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 14px;
+    line-height: 23.8px;
+    text-align: start;
+    letter-spacing: 1px;
+    color: #ef8451;
+    background: #0f393b;
+    box-shadow: none;
+    border-radius: 37px;
+}
+
+.imagen-contenedor {
+    width: 80%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/*Lista Oportunidades*/
+/* Contenedor principal para las oportunidades */
+.contenedor-oportunidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+/* Estilo para cada tarjeta de oportunidad */
+.card-oportunidad {
+    flex: 0 1 calc(25% - 20px); /* Ajuste para 4 tarjetas por fila restando el gap */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para bordes redondeados en la imagen */
+    margin-bottom: 20px; /* Espacio adicional entre filas si es necesario */
+    padding: 10px; /* Reducir el padding puede ayudar a que la tarjeta parezca más pequeña */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.card-oportunidad.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imagen-oportunidad {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    display: block; /* Elimina espacio extra */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 150px; /* Limitar la altura de la imagen */
+    object-fit: cover; /* Para que la imagen cubra el área asignada sin perder su proporción */
+}
+
+.info-oportunidad {
+    padding: 15px;
+}
+
+/* Estilos responsivos para ajustar el tamaño del texto */
+@media (max-width: 1024px) {
+    .card-oportunidad {
+        flex: 0 1 calc(50% - 20px); /* Ajuste para 2 tarjetas por fila */
+    }
+    
+    .imagen-oportunidad {
+        max-height: 120px; /* Ajusta la altura máxima de la imagen para tarjetas más cortas */
+    }
+    
+    .info-oportunidad h2 {
+        font-size: 1em; /* Reducir el tamaño del título */
+    }
+    
+    .info-oportunidad p {
+        font-size: 0.8em; /* Reducir el tamaño del texto */
+    }
+    
+    .btn-oportunidad {
+        font-size: 0.8em; /* Reducir el tamaño del texto del botón */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-oportunidad {
+        flex: 0 1 calc(100% - 20px); /* Ajuste para 1 tarjeta por fila */
+    }
+    
+    .info-oportunidad h2, .info-oportunidad p, .btn-oportunidad {
+        font-size: 0.7em; /* Reducir aún más el tamaño del texto para pantallas más pequeñas */
+    }
+}
+
+
+
+/*2DA PARTE*/
+.fb-share-button {
+    margin-top: 10px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+.twitter-share-button {
+    margin-top: 10px;
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.twitter-share-button {
+    background-color: #1da1f2;
+    width: auto; 
+}
+
+
+.oportunidad form {
+    text-align: center;
+}
+
+.btn-oportunidad {
+    background: #ff6600;
+    color: white;
+    border: 2px solid #ff6600;
+    padding: 12px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    transition: all 0.3s ease;
+}
+
+.btn-oportunidad:hover {
+    background: white;
+    color: #ff6600;
+    border-color: #ff6600;
+}
+
+.form-oportunidad {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido del formulario */
+    align-items: center; /* Centra verticalmente si es necesario */
+    text-align: center;
+    margin-top: 10px;
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho disponible */
+}
+
+
+
+
+
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+
+
+    #campoBusqueda {
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .resultado-busqueda {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        padding: 15px;
+        width: 60%; /* Igual ancho que la barra de búsqueda */
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeIn 0.5s ease-in-out; /* Aplicar la animación */
+    }
+
+    .btn-ver-mas, .btn-chatear {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-chatear {
+        background-color: #008577;
+        margin-left: 10px;
+    }
+
+    .btn-ver-mas:hover, .btn-chatear:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-chatear:hover {
+        background-color: #00695c;
+    }

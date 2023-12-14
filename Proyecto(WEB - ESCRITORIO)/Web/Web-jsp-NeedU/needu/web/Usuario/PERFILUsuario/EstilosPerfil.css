@@ -1,0 +1,219 @@
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh; /* Altura de la ventana completa */
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    flex-basis: 300px; /* Ancho de la barra lateral */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.menu-title {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.bottom-content {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.content {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group label,
+.input-group input {
+    flex: 1;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+}
+
+input[type="submit"],
+button {
+    background-color: #FFA07A; /* Naranja pastel */
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #FF7F50; /* Un poco más oscuro al pasar el mouse */
+}
+
+.red {
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.lightgreen {
+    color: black;
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#profile-img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.bienvenida {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según tus necesidades */
+    margin-top: 20px; /* Añade un margen en la parte superior si es necesario */
+}
+
+.bienvenida label {
+    font-weight: normal; /* Asegura que solo el nombre del usuario esté en negrita */
+}
+
+.bienvenida strong {
+    font-weight: bold; /* Hace que el nombre del usuario esté en negrita */
+}
+
+
+
+.agregar-oportunidad {
+    background-color: #266fad40; /* Fondo claro para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+    margin: 20px 0; /* Espacio alrededor del formulario */
+}
+
+.agregar-oportunidad form {
+    display: flex;
+    flex-direction: column;
+}
+
+.agregar-oportunidad label {
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+    font-weight: bold;
+}
+
+.agregar-oportunidad input[type="text"],
+.agregar-oportunidad input[type="date"],
+.agregar-oportunidad select,
+.agregar-oportunidad textarea {
+    padding: 10px;
+    margin-bottom: 20px; /* Espacio entre cada campo */
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+}
+
+.agregar-oportunidad textarea {
+    height: 100px; /* Altura fija para la descripción */
+    resize: vertical; /* Permite al usuario ajustar la altura verticalmente */
+}
+
+.agregar-oportunidad input[type="submit"] {
+    background-color: #4CAF50; /* Color distintivo para el botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.agregar-oportunidad input[type="submit"]:hover {
+    background-color: #45a049; /* Un poco más oscuro al pasar el mouse */
+}
+
+
+.oportunidad {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-eliminar {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+    display: inline-block;
+}
+
+.btn-eliminar:hover {
+    background-color: #e60000;
+}
+
+
+.btn-cuenta {
+    padding: 10px 15px; /* Ajusta el relleno para controlar el tamaño */
+    border-radius: 5px; /* Bordes redondeados para estilo */
+    cursor: pointer;
+    display: inline-block; /* Esto permite que el botón se ajuste al contenido */
+    width: auto; /* Esto evita que el botón se extienda más allá del contenido */
+    /* Añade aquí otros estilos como color de fondo, color de texto, etc. */
+}
+
+.form-cuenta button {
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    /* Añade aquí otros estilos */
+}
+

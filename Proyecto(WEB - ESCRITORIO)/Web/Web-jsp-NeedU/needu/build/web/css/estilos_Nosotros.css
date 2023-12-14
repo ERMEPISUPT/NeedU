@@ -1,0 +1,290 @@
+/* Estilos para el navbar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f3ee;
+}
+
+#navbar {
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px; /* Aumentamos el margen en la parte superior e inferior */
+    padding-left: 92px; /* Aumentamos el margen a la izquierda */
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.links {
+    display: flex;
+}
+
+.links a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.menu-options {
+    display: none; /* Oculta las opciones del menú inicialmente */
+    width: 79%; /* Ajusta el ancho según tus necesidades */
+    height: 281px; /* Ajusta la altura según tus necesidades */
+    padding: 0;
+    position: absolute;
+    left: 93px; /* Ajusta la posición hacia la derecha */
+    background: white; /* Fondo blanco en toda el área del menú emergente */
+    transform: translateY(-110%); /* Empieza oculto arriba */
+    transition: transform 0.5s ease-in-out; /* Agrega la transición para transformar la propiedad */
+    z-index: 0; /* Ajusta el z-index del menú para que esté por debajo del encabezado */
+}
+
+.menu-options.active {
+    transform: translateY(0); /* Muestra el menú bajando desde arriba */
+    border-top: 3px solid #2ea3f2;
+    background: white; /* Fondo blanco en estado activo */
+}
+
+.menu-options::before {
+    content: "";
+    position: absolute;
+    top: -3px; /* Ajusta esta posición para que el pseudo-elemento esté arriba del menú */
+    width: 100%;
+    height: 3px; /* Grosor del border-top */
+    background-color: #2ea3f2;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* El pseudo-elemento inicialmente está oculto */
+}
+
+.menu-options.active::before {
+    opacity: 1; /* Muestra el pseudo-elemento cuando el menú está activo */
+}
+
+.menu-options ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.menu-options li {
+    text-align: -webkit-match-parent;
+}
+
+.menu-options li a {
+    border-bottom: 2px solid rgba(0, 0, 0, .03);
+    display: block;
+}
+
+.menu-options a {
+    color: #666;
+    padding: 20px 75px; /* Reduce el espacio en la izquierda y derecha del texto */
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    background-color: white;
+    font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+    font-weight: bold;
+}
+
+.menu-options a:hover {
+}
+
+
+
+/*RESOLUCIONES*/
+@media screen and (max-width: 1000px) {
+    .menu-icon {
+        display: block; /* Mostrar el icono de menú */
+    }
+
+    .links {
+        display: none; /* Ocultar los enlaces */
+    }
+
+    .menu-options {
+        display: block; /* Mostrar las opciones del menú */
+    }
+
+    .menu-icon:hover + .menu-options {
+        display: block; /* Muestra las opciones al pasar el cursor sobre el icono de menú */
+    }
+
+    .seccion {
+        padding-left: 7%;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .menu-icon {
+        display: none; /* Ocultar el icono de menú */
+    }
+
+    .links {
+        display: flex; /* Mostrar los enlaces del navbar */
+    }
+
+    .links a {
+        font-family: 'Poppins, Helvetica', 'Arial, Lucida', sans-serif;
+        color: #666;
+        text-decoration: none;
+        margin-right: 50px;
+        font-weight: bold;
+    }
+
+    .seccion {
+        padding-left: 20%;
+    }
+    
+    .texto-interior h1 {
+    margin-right: 60%;
+    }
+    .texto-interior p {
+    margin-right: 65%;
+    }
+}
+
+
+
+
+
+
+/*DEBAJO DEL ENCABEZADO*/
+
+.columna-mitad, .columna-mitad-ultimo {
+    width: 100%; /* Estira la sección al 100% del ancho */
+    max-width: 95%; /* Limita el ancho máximo al 95% para evitar que llegue al 5% del ancho de la ventana */
+    margin: 0 auto;
+}
+
+.seccion {
+    font-family: "Open Sans, Arial, sans-serif";
+    font-size: 14px;
+    line-height: 23.8px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #666666;
+    background: #0f393b;
+    box-shadow: none;
+    border-radius: 0px 0px 20px 20px;
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
+.fila {
+    font-family: "Open Sans, Arial, sans-serif";
+    font-size: 14px;
+    line-height: 23.8px;
+    text-align: start;
+    letter-spacing: normal;
+    color: #666666;
+    background: #0f393b;
+}
+
+/* Encabezado h4 */
+.texto-interior h4 {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+    letter-spacing: 1px;
+    color: #ef8451;
+    background: #0f393b;
+}
+
+/* Título h1 */
+.texto-interior h1 {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 64px;
+    line-height: 73.6px;
+    text-align: left;
+    letter-spacing: -1.28px;
+    color: #ffffff;
+    background: #0f393b;
+}
+
+/* Párrafo p */
+.texto-interior p {
+    font-family: "Nanum Myeongjo, Georgia, Times New Roman, serif";
+    font-size: 18px;
+    line-height: 32.4px;
+    text-align: left;
+    letter-spacing: normal;
+    color: #f2ebe4;
+    background: #0f393b;
+}
+
+/* Botón */
+.boton {
+    font-family: "DM Sans, Helvetica, Arial, Lucida, sans-serif";
+    font-size: 14px;
+    line-height: 23.8px;
+    text-align: start;
+    letter-spacing: 1px;
+    color: #ef8451;
+    background: #0f393b;
+    box-shadow: none;
+    border-radius: 37px;
+}
+
+/* Imagen */
+.imagen-contenedor {
+    width: 801px;
+    height: 801px;
+    background-image: url("imagenes/doodle_index.png");
+}
+
+
+
+
+
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Fondo blanco */
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    text-align: center;
+    max-width: 1200px; /* Puedes ajustar esto según el diseño */
+    margin: 0 auto;
+  }
+  .header {
+    padding: 20px;
+  }
+  .header h1 {
+    color: #333;
+  }
+  .steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Asegura que los elementos se ajusten en pantallas pequeñas */
+    padding: 20px;
+  }
+  .step {
+    text-align: center;
+    width: 30%; /* Ajusta este porcentaje para cambiar el ancho de las columnas */
+    margin-top: 20px;
+  }
+  .step img {
+    width: 200px; /* Tamaño más grande de las imágenes */
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    .step {
+      width: 100%; /* Las columnas toman todo el ancho en pantallas pequeñas */
+    }
+  }

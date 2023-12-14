@@ -1,0 +1,16 @@
+DESCARGAR 
+https://github.com/opencv/opencv/releases/download/4.8.0/opencv-4.8.0-windows.exe
+------------------------------------------------------------------------------------------------------------------------
+OPENCV 
+-Descargar e instalar en C:
+
+-luego dentro de la carpeta opencv que se crea ene l directorio C:
+C:\opencv
+
+
+-Pegar el archivo haarcascade_frontalface_alt.xml dentro de esta carpeta
+
+
+------------------------------------------------------------------------------------------------------------------------
+En netbeans poner el jar que esta en ; 
+C:\opencv\build\java\opencv-480-jar
